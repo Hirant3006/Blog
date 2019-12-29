@@ -1,0 +1,60 @@
+$orange-color: #ff8400;
+$black-color: #333;
+$white-color: #ffff;
+$danger-color: #dc3545;
+$gray-color: #f3f0ef;
+$main-color: #fbf9f4;
+
+$spacemounts: (5,10,20,30,40,50,60,70,80,90,100,200,300,500,1000);
+
+@function set-text-color($color) {
+    @if(lightness($color) > 60) {
+        @return #333
+    } @else {
+        @return #fff;
+    }
+}
+
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+@each $space in $spacemounts {
+    // All arroung margin
+    .m-#{$space} {
+        margin: #{$space}px;
+    }
+    // Vertical margin
+    .ml-#{$space} {
+        margin-left: #{$space}px ;
+    }
+    .mr-#{$space} {
+        margin-right: #{$space}px ;
+    }
+    .mt-#{$space} {
+        margin-top: #{$space}px ;
+    }
+    .mb-#{$space} {
+        margin-bottom: #{$space}px ;
+    }
+    //Padding
+    // All arroung margin
+    .p-#{$space} {
+        padding: #{$space}px;
+    }
+    // Vertical padding
+    .pl-#{$space} {
+        padding-left: #{$space}px ;
+    }
+    .pr-#{$space} {
+        padding-right: #{$space}px ;
+    }
+    .pt-#{$space} {
+        padding-top: #{$space}px ;
+    }
+    .pb-#{$space} {
+        padding-bottom: #{$space}px ;
+    }
+   
+}

@@ -1,0 +1,74 @@
+.round-img {
+  border-radius: 50%;
+}
+
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.medium {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.regular {
+  font-size: 1rem;
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+.bg {
+  &-orange {
+    @include set-background($orange-color);
+  }
+  &-white {
+    @include set-background($white-color);
+    border: #ccc 1px solid;
+  }
+  &-black {
+    @include set-background($black-color);
+  }
+  &-danger {
+    @include set-background($danger-color);
+  }
+  &-gray {
+    @include set-background($gray-color);
+  }
+  &-white {
+    @include set-background(#fff);
+    border: #ccc 1px solid;
+  }
+}
+
+.pos-abs {
+  position: absolute;
+}
+.border {
+  border: 1px solid black;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.no-underlying {
+  color: inherit;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.wrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
