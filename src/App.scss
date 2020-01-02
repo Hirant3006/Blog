@@ -11,12 +11,16 @@ header {
     font-size: 6.5em;
     font-family: "Inria Serif", serif;
     letter-spacing: 0.08em;
+    a {
+      color: black;
+    }
   }
   @media only screen and (max-width: 800px) {
     .mobile-navbar {
       display: flex !important;
       justify-content: space-between;
       align-items: center;
+      margin: 0;
       a {
         color: #333;
         font-size: 14px;
@@ -48,6 +52,9 @@ header {
           cursor: pointer;
           -webkit-transition: color 0.2s ease;
           transition: color 0.2s ease;
+        }
+        a:hover {
+          color: #e13d3d;
         }
       }
     }
