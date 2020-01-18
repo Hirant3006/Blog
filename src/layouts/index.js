@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.scss";
 import "../assets/scss/common.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -34,7 +34,7 @@ function App() {
     <div className="App mt-40">
       <header>
         <span >
-          <Link class="logo" to="/">A LITTLE HIRANY</Link>
+          <Link className="logo" to="/">A LITTLE HIRANY</Link>
         </span>
         <nav className="navbar mt-10">
           {NavigateComp}
