@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.scss";
-import "./assets/scss/common.scss";
+import "../assets/scss/common.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Router from "./router";
+import Router from "../router/";
 import { Link } from "react-router-dom";
 
 library.add(fab, faSearch, faBars);
@@ -24,17 +24,17 @@ function App() {
 
   const NavigateComp = NavigateList.map((item, index) =>
     item === "ABOUT" ? (
-      <Link to="/about">{item}</Link>
+      <Link key={index} to="/about">{item}</Link>
     ) : (
       <a key={index} className="ml-20" href={`\${item}`}>{item}</a>
     )
   );
   // console.log(displayMobileNav, setDisplayMobieNav);
   return (
-    <div className="App">
+    <div className="App mt-40">
       <header>
-        <span className="logo">
-          <Link to="/">A LITTLE HIRANY</Link>
+        <span >
+          <Link class="logo" to="/">A LITTLE HIRANY</Link>
         </span>
         <nav className="navbar mt-10">
           {NavigateComp}
