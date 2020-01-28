@@ -28,7 +28,7 @@ function App() {
         {item}
       </Link>
     ) : (
-      <a key={index} className="ml-20" href={`\${item}`}>
+      <a key={index} className="ml-20" href={'/'}>
         {item}
       </a>
     )
