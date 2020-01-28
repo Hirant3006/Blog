@@ -7,7 +7,7 @@ import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Router from "../router/";
 import { Link } from "react-router-dom";
-
+import SideBar from './SideBar'
 library.add(fab, faSearch, faBars);
 
 const NavigateList = [
@@ -24,17 +24,23 @@ function App() {
 
   const NavigateComp = NavigateList.map((item, index) =>
     item === "ABOUT" ? (
-      <Link key={index} to="/about">{item}</Link>
+      <Link key={index} to="/about">
+        {item}
+      </Link>
     ) : (
-      <a key={index} className="ml-20" href={`\${item}`}>{item}</a>
+      <a key={index} className="ml-20" href={`\${item}`}>
+        {item}
+      </a>
     )
   );
   // console.log(displayMobileNav, setDisplayMobieNav);
   return (
     <div className="App mt-40">
       <header>
-        <span >
-          <Link className="logo" to="/">A LITTLE HIRANY</Link>
+        <span>
+          <Link className="logo" to="/">
+            A LITTLE HIRANY
+          </Link>
         </span>
         <nav className="navbar mt-10">
           {NavigateComp}
@@ -62,14 +68,7 @@ function App() {
         <section>
           <Router />
         </section>
-        <div className="sidebar">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum do
-        </div>
-        {/*  */}
+        <SideBar className="sidebar" />
       </div>
     </div>
   );
