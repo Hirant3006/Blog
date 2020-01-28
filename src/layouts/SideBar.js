@@ -20,7 +20,7 @@ const SideBar = () => {
         <div>
           {" "}
           <br />
-          Hiện tại chốn này vẫn chưa hoàn thiện mà cũng chả có mấy content, nên nếu
+          Hiện tại ở đây vẫn chưa hoàn thiện mà cũng không có mấy content, nên nếu
           hứng thú với mấy thứ ở trên thì liên lạc với tớ ha :>
         </div>
         <div className="social-links mt-30 mb-30">
