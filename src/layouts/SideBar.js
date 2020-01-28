@@ -21,7 +21,7 @@ const SideBar = () => {
           {" "}
           <br />
           Hiện tại ở đây vẫn chưa hoàn thiện mà cũng không có mấy content, nên nếu
-          hứng thú với mấy thứ ở trên thì liên lạc với tớ ha :>
+          hứng thú với mấy thứ ở trên hay mấy bài viết thì liên lạc với mình ha :>
         </div>
         <div className="social-links mt-20 mb-30">
           <a className="facebook" href="https://www.facebook.com/Hirantinsleep"><i className="fab fa-facebook-f"></i></a>
