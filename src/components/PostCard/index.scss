@@ -8,22 +8,15 @@
     font-weight: 400;
   }
   &-content {
-   font-size: 16px;
-   display: block; /* Fallback for non-webkit */
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* no of lines */
-    text-overflow: ellipsis;
-    overflow:hidden !important;
-    // width:180px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -.01em;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
   &-date {
     font-size: 13px;
     line-height: 30px;
     letter-spacing: .08em;
-  }
-  &-content {
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: -.01em;
   }
 }

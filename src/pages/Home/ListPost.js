@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as contentful from "contentful";
 import PostCard from "../../components/PostCard/";
+import './listpost.scss';
 
 export default ListPost => {
   const [contents, setContents] = useState({});
@@ -20,7 +21,7 @@ export default ListPost => {
   }, []);
 
   const PostCardList = (contents.items || []).map((content, index) => {
-    return <div key={index}><PostCard {...content} /></div>
+    return <div key={index} className="mb-40"><PostCard {...content} /></div>
   })
 
   return (

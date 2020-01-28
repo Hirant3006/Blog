@@ -1,4 +1,5 @@
 .posts {
-    display: flex;
-    flex: column;
+    div:not(:last-child) {
+        border-bottom: 1px solid #e13d3d;
+    }
 }
