@@ -16,4 +16,14 @@
     overflow:hidden !important;
     // width:180px;
   }
+  &-date {
+    font-size: 13px;
+    line-height: 30px;
+    letter-spacing: .08em;
+  }
+  &-content {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -.01em;
+  }
 }
