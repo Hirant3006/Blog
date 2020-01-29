@@ -12,8 +12,12 @@ export default ListPost => {
         accessToken: "AGjnCQHwzRIWOr7e9-kn8PLMMd0cWnRCXRjiNl_YHrY"
       });
     const getPost = async () => {
-        const data = await client.getEntries();
-        console.log("data ", data);
+        const data = await client.getEntries({
+          order:'sys.updatedAt',
+          'content_type': "blogPost"
+        });
+        const data2 = await client.getContentTypes();
+        console.log("data ", data2);
         setContents(data);
       };
     
