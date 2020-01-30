@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    .posts {
+      width: 65%;
+    }
+    .about-content {
+      width: 25%;
+    }
+    @media only screen and (max-width: 800px) {
+      .about-content {
+        display: none;
+      }
+      .posts {
+        width: 100%;
+      }
+    }
+  }
+  

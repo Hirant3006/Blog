@@ -1,7 +1,8 @@
-.about {
-  width: 280px;
+.about-me {
   background-color: white;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
   .title {
     text-align: center;
     font-size: 18px;

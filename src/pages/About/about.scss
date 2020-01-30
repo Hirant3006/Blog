@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .wrapper-about-me{
+        width: 30%;
+    }
+    @media only screen and (max-width: 800px) {
+        .wrapper-about-me{
+            width: 100%;
+        }
+      }
+}

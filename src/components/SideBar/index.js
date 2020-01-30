@@ -3,8 +3,8 @@ import "./sidebar.scss";
 
 const SideBar = () => {
   return (
-    <div className="about">
-      <img alt='Nhã "Hirant" Lý' src={require("../assets/img.jpg")} />
+    <div className="about-me">
+      <img alt='Nhã "Hirant" Lý' src={require("../../assets/img.jpg")} />
       <div className="title p-20">
         Chào, mình là <b style={{ color: "#e13d3d" }}>Nhã</b>
       </div>

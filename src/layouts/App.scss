@@ -94,21 +94,3 @@ header {
   }
 }
 
-.main {
-  display: flex;
-  justify-content: space-between;
-  section {
-    width: 62%;
-  }
-  .about {
-    width: 30%;
-  }
-  @media only screen and (max-width: 800px) {
-    .about {
-      display: none;
-    }
-    section {
-      width: 100%;
-    }
-  }
-}

@@ -7,7 +7,6 @@ import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Router from "../router/";
 import { Link } from "react-router-dom";
-import SideBar from './SideBar'
 library.add(fab, faSearch, faBars);
 
 const NavigateList = [
@@ -19,7 +18,7 @@ const NavigateList = [
   "ABOUT"
 ];
 
-function App() {
+function App(props) {
   // const [displayMobileNav, setDisplayMobieNav] = useState(false);
 
   const NavigateComp = NavigateList.map((item, index) =>
@@ -28,11 +27,12 @@ function App() {
         {item}
       </Link>
     ) : (
-      <a key={index} className="ml-20" href={'/'}>
+      <a key={index} className="ml-20" href={"/"}>
         {item}
       </a>
     )
   );
+
   // console.log(displayMobileNav, setDisplayMobieNav);
   return (
     <div className="App mt-40">
@@ -65,10 +65,7 @@ function App() {
         <div className="mt-10 mobile-navbar-dropdown">{NavigateComp}</div>
       </header>
       <div className="main mt-40">
-        <section>
-          <Router />
-        </section>
-        <SideBar className="sidebar" />
+        <Router />
       </div>
     </div>
   );
