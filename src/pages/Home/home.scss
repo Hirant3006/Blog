@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     .posts {
-      width: 65%;
+      width: 60%;
     }
     .about-content {
-      width: 25%;
+      width: 30%;
     }
     @media only screen and (max-width: 800px) {
       .about-content {
