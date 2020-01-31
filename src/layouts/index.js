@@ -10,11 +10,10 @@ import { Link } from "react-router-dom";
 library.add(fab, faSearch, faBars);
 
 const NavigateList = [
-  "STYLE",
-  "DESIGN",
-  "FOOD",
-  "TRAVEL",
-  "RELATIONSHIPS",
+  "CODING",
+  "UI/UX",
+  "NHẢM NHÍ",
+  "PHIM ẢNH",
   "ABOUT"
 ];
 
