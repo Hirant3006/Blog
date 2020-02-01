@@ -10,28 +10,30 @@ import { Link } from "react-router-dom";
 library.add(fab, faSearch, faBars);
 
 const NavigateList = [
-  "CODING",
-  "UI/UX",
-  "NHẢM NHÍ",
-  "PHIM ẢNH",
-  "ABOUT"
+  { name: "CODING", cat:'code', path: "/category/code" },
+  { name: "UI/UX",  cat:'uiux', path: "/category/uiux" },
+  { name: "NHẢM NHÍ", cat:'life' ,path: "/category/life" },
+  { name: "PHIM ẢNH", cat:'movie' ,path: "/category/movie" },
+  { name: "ABOUT", cat:'about' ,path: "/about" },
 ];
 
 function App(props) {
-  // const [displayMobileNav, setDisplayMobieNav] = useState(false);
 
-  const NavigateComp = NavigateList.map((item, index) =>
-    item === "ABOUT" ? (
-      <Link key={index} to="/about">
-        {item}
-      </Link>
-    ) : (
-      <a key={index} className="ml-20" href={"/"}>
-        {item}
+  const isPickCat = (cat) =>  {
+    if (window.location.pathname.indexOf(cat) !== -1) return {color:'#e13d3d'} 
+    return 
+  }
+  
+  const NavigateComp = NavigateList.map((item, index) => (
+      <a key={index} className="ml-20" href={item.path} style={isPickCat(item.cat)}>
+        {item.name}
       </a>
     )
   );
 
+  // useEffect(()=> {
+  //   console.log(path())
+  // },[])
   // console.log(displayMobileNav, setDisplayMobieNav);
   return (
     <div className="App mt-40">

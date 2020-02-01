@@ -1,14 +1,16 @@
 import { Switch, Route } from "react-router-dom";
-import Home from '../pages/Home/'
-import About from '../pages/About/'
-import React from "react"; 
+import Home from "../pages/Home/";
+import About from "../pages/About/";
+// import Category from "../pages/Category/";
+import React from "react";
 
 export default Router => {
-
-
-  return (<Switch>
-    <Route exact path="/" component={Home} />
-    {/* both /roster and /roster/:number begin with /roster */}
-    <Route path="/about" component={About} />
-  </Switch>);
-}
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+      {/* both /roster and /roster/:number begin with /roster */}
+      <Route path="/about" component={About} />
+      <Route path="/category/:cat" component={Home} />
+    </Switch>
+  );
+};

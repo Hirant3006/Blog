@@ -4,8 +4,8 @@ import "./about.scss";
 
 export default About => {
   return (
-    <div class="container">
-      <div class="wrapper-about-me">
+    <div className="container">
+      <div className="wrapper-about-me">
         <SideBar className="sidebar" />
       </div>
     </div>

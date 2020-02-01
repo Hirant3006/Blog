@@ -1,10 +1,10 @@
 import React from "react";
 import "./index.scss";
 import moment from "moment";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+// import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const PostCard = ({ fields }) => {
+const PostCard = ({ fields,isHomePage }) => {
   const formatTime = date => moment(date).format("MMMM DD, YYYY HH:mm");
 
   const options = {
@@ -28,7 +28,7 @@ const PostCard = ({ fields }) => {
 
   return (
     <div className="card mb-40 ">
-      <b className="card-cat mb-10 regular">{fields.category}</b>
+      { isHomePage ? <b className="card-cat mb-10 regular">{fields.category.charAt(0).toUpperCase() + fields.category.slice(1)}</b> : ''}
       <a className="card-title mb-10" href="/">
         {fields.title}
       </a>

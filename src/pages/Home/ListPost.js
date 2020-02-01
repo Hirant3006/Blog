@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import * as contentful from "contentful";
 import PostCard from "../../components/PostCard/";
 import "./listpost.scss";
+import axios from 'axios'
+export default ({cat}) => {
+  const [contents, setContents] = useState('beforeloading');
 
-export default ListPost => {
-  const [contents, setContents] = useState({});
+  let meowurl='dwd  '
 
   useEffect(() => {
     const client = contentful.createClient({
@@ -14,23 +16,25 @@ export default ListPost => {
     const getPost = async () => {
       const data = await client.getEntries({
         order: "sys.updatedAt",
-        content_type: "blogPost"
+        content_type: "blogPost",
+        'fields.category': cat,
       });
-      const data2 = await client.getContentTypes();
-      console.log("data ", data2);
+      meowurl = await axios.get('https://api.thecatapi.com/v1/images/search');
       setContents(data);
     };
 
     getPost();
-  }, []);
+  }, [cat,meowurl]);
 
   const PostCardList = (contents.items || []).map((content, index) => {
     return (
       <div key={index} className="mb-40">
-        <PostCard {...content} />
+        <PostCard isHomePage={cat === ''} {...content} />
       </div>
     );
   });
 
-  return contents ? PostCardList : <div>Đợi tí..</div>;
-};
+  if ((contents.items || []).length!==0)  return PostCardList
+  else if (contents!=='beforeloading') return <div>Chưa có gì ở đây nha cậu ơi {':<'} </div>
+  return <div>Đợi tớ tìm content tí :></div>
+};  
