@@ -1,7 +1,7 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch,BrowserRouter, Route } from "react-router-dom";
 import Home from "../pages/Home/";
 import About from "../pages/About/";
-// import Category from "../pages/Category/";
+import BlogPost from "../pages/Post";
 import React from "react";
 
 export default Router => {
@@ -11,6 +11,7 @@ export default Router => {
       {/* both /roster and /roster/:number begin with /roster */}
       <Route path="/about" component={About} />
       <Route path="/category/:cat" component={Home} />
+      <Route exact path="/:cat/:title" component={BlogPost} />
     </Switch>
   );
 };

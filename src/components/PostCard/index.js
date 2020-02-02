@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.scss";
 import moment from "moment";
+import {Link} from 'react-router-dom'
 // import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -26,12 +27,19 @@ const PostCard = ({ fields,isHomePage }) => {
   //   return data
   // }
 
+  function removeAccents(str) {
+    return str.split(" ").join("-");
+  }
+  // const url = () => {
+  //   window.encodeURI( )
+  // }
+
   return (
     <div className="card mb-40 ">
-      { isHomePage ? <b className="card-cat mb-10 regular">{fields.category.charAt(0).toUpperCase() + fields.category.slice(1)}</b> : ''}
-      <a className="card-title mb-10" href="/">
+      <b className="card-cat mb-10 regular">{fields.category.charAt(0).toUpperCase() + fields.category.slice(1)}</b> 
+      <Link className="card-title mb-10" to={`/${fields.category}/${removeAccents(fields.titleUrl)}`}>
         {fields.title}
-      </a>
+      </Link>
       <span className="card-date small mb-10">
         {formatTime(fields.createDate)}
       </span>

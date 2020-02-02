@@ -1,19 +1,26 @@
 .main {
-    display: flex;
-    justify-content: space-between;
-    .posts {
-      width: 65%;
-    }
+  display: flex;
+  justify-content: space-between;
+  .posts {
+    width: 65%;
+  }
+  .about-content {
+    width: 25%;
+  }
+  @media only screen and (max-width: 800px) {
     .about-content {
-      width: 25%;
+      display: none;
     }
-    @media only screen and (max-width: 800px) {
-      .about-content {
-        display: none;
-      }
-      .posts {
-        width: 100%;
-      }
+    .posts {
+      width: 100%;
     }
   }
-  
+}
+
+.text-progress {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-top: 100px;
+}
