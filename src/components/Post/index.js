@@ -1,8 +1,9 @@
 import React, {userEffect} from "react";
 import "./index.scss";
 import moment from "moment";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import MetaTags,{ReactTitle} from 'react-meta-tags';
 
 const Post = ({ fields }) => {
   const formatTime = date => moment(date).format("MMMM DD, YYYY HH:mm");
@@ -11,9 +12,7 @@ const Post = ({ fields }) => {
     // Render image
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        // console.log(node)
         let { title, file } = node.data.target.fields
-        // console.log(file["en-US"].url)
         return <div className="card-content-img mt-20 mb-20"><img src={file.url}/><div>{title}</div></div>
       },
     },
@@ -23,6 +22,10 @@ const Post = ({ fields }) => {
 
   return (
     <div className="card mb-40 ">
+      <ReactTitle title={`${fields.title} |  A little Hirany`}/>
+      <MetaTags>
+        <meta property="og:title" content={fields.title} />
+      </MetaTags>
       <b className="card-cat mb-10 regular">{fields.category.charAt(0).toUpperCase() + fields.category.slice(1)}</b> 
       <a className="card-title mb-10">
         {fields.title}
