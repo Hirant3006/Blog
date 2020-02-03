@@ -32,3 +32,9 @@
     letter-spacing: 0.08em;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .card-content-img {
+    width: 100%
+  }
+}
