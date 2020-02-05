@@ -1,4 +1,4 @@
-import React, {userEffect} from "react";
+import React from "react";
 import "./index.scss";
 import moment from "moment";
 import { BLOCKS } from "@contentful/rich-text-types";
