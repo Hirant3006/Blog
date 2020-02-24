@@ -3,6 +3,26 @@ import { useParams } from "react-router-dom";
 import usePost from "../../hooks/usePost";
 import Post from "../../components/Post/";
 import SideBar from "../../components/SideBar/index";
+import styled from "styled-components";
+
+const StyledHome = styled.div`
+  display: flex;
+  justify-content: space-between;
+  .posts {
+    width: 65%;
+  }
+  .about-content {
+    width: 28%;
+  }
+  @media only screen and (max-width: 800px) {
+    .about-content {
+      display: none;
+    }
+    .posts {
+      width: 100%;
+    }
+  }
+`;
 
 const BlogPost = () => {
   let { cat, title } = useParams();
@@ -10,11 +30,10 @@ const BlogPost = () => {
   const post = usePost(cat, title);
 
   useEffect(() => {
-    console.log("Post ", post);
   }, [post]);
 
   return (
-    <div className="main">
+    <StyledHome c>
       <div className="posts">
         {post !== -1 ? (
           <Post fields={post.fields} />
@@ -25,7 +44,7 @@ const BlogPost = () => {
       <div className="about-content">
         <SideBar />
       </div>
-    </div>
+    </StyledHome>
   );
 };
 export default BlogPost;

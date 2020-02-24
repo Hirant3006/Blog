@@ -13,7 +13,7 @@ const Post = ({ fields }) => {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
         let { title, file } = node.data.target.fields
-        return <div className="card-content-img mt-20 mb-20"><img src={file.url}/><div>{title}</div></div>
+        return <div className="card-content-img mt-20 mb-20"><img alt={file.name} src={file.url}/><div>{title}</div></div>
       },
     },
     renderText: text =>
@@ -27,7 +27,7 @@ const Post = ({ fields }) => {
         <meta property="og:title" content={fields.title} />
       </MetaTags>
       <b className="card-cat mb-10 regular">{fields.category.charAt(0).toUpperCase() + fields.category.slice(1)}</b> 
-      <a className="card-title mb-10">
+      <a className="card-title mb-10" href='/'>
         {fields.title}
       </a>
       <span className="card-date small mb-30">
