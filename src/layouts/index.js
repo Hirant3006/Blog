@@ -1,5 +1,5 @@
-import React from "react";
-import "./App.scss";
+import React, { useEffect, useState } from "react";
+import StyledApp from "./styledApp";
 import "../assets/scss/common.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -7,6 +7,29 @@ import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Router from "../router/";
 import { Link } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+
+const DropdownNavKeyframes = keyframes`
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 160px;
+}`;
+
+const UnDropdownNavKeyframes = keyframes`
+  0% {
+    opacity: 1;
+    height: 160px;
+  }
+  100% {
+    opacity: 0;
+    height: 0px;
+}`;
+
+
 library.add(fab, faSearch, faBars);
 
 const NavigateList = [
@@ -18,6 +41,23 @@ const NavigateList = [
 ];
 
 function App(props) {
+  const [isDropDown, setDropDown] = useState("start");
+  const [DropDownAni, setDropDownAni] = useState(styled.div``);
+
+  useEffect(() => {
+    if (isDropDown == false)
+      setDropDownAni(styled.div`
+        animation: ${DropdownNavKeyframes} 1s linear 0s;
+        animation-fill-mode: forwards;
+      `);
+    else if (isDropDown == true)
+      setDropDownAni(styled.div`
+        animation: ${UnDropdownNavKeyframes} 1s linear 0s;
+        animation-fill-mode: forwards;
+      `);
+    else setDropDownAni(styled.div``);
+  }, [isDropDown]);
+
   const isPickCat = cat => {
     if (window.location.pathname.indexOf(cat) !== -1)
       return { color: "#e13d3d" };
@@ -40,11 +80,11 @@ function App(props) {
   // },[])
   // console.log(displayMobileNav, setDisplayMobieNav);
   return (
-    <div className="App mt-40">
+    <StyledApp className="mt-40">
       <header>
         <span>
           <Link className="logo" to="/">
-            A LITTLE HIRANY
+            A LITTLE HIRANY 
           </Link>
         </span>
         <nav className="navbar mt-10">
@@ -56,7 +96,7 @@ function App(props) {
           </a>
         </nav>
         <nav className="mobile-navbar mt-10">
-          <a href="/">
+          <a onClick={() => setDropDown(!isDropDown)}>
             <FontAwesomeIcon icon="bars" className="mr-5" />
             MENU
           </a>
@@ -67,12 +107,14 @@ function App(props) {
           </a>
         </nav>
         <div className="border"></div>
-        <div className="mt-10 mobile-navbar-dropdown">{NavigateComp}</div>
+        <DropDownAni className="mt-10 mobile-navbar-dropdown">
+          {NavigateComp}
+        </DropDownAni>
       </header>
-      <div className="mt-40">
+      <div className="mt-20">
         <Router />
       </div>
-    </div>
+    </StyledApp>
   );
 }
 
