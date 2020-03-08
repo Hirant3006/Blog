@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import StyledApp from "./styledApp";
 import "../assets/scss/common.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import StyledApp from "./styledApp";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,12 +45,12 @@ function App(props) {
   const [DropDownAni, setDropDownAni] = useState(styled.div``);
 
   useEffect(() => {
-    if (isDropDown == false)
+    if (isDropDown === false)
       setDropDownAni(styled.div`
         animation: ${DropdownNavKeyframes} 1s linear 0s;
         animation-fill-mode: forwards;
       `);
-    else if (isDropDown == true)
+    else if (isDropDown === true)
       setDropDownAni(styled.div`
         animation: ${UnDropdownNavKeyframes} 1s linear 0s;
         animation-fill-mode: forwards;
@@ -97,7 +97,7 @@ function App(props) {
             </a>
           </nav>
           <nav className="mobile-navbar mt-10">
-            <a onClick={() => setDropDown(!isDropDown)}>
+            <a href=" " onClick={() => setDropDown(!isDropDown)}>
               <FontAwesomeIcon icon="bars" className="mr-5" />
               MENU
             </a>
