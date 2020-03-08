@@ -4,5 +4,6 @@ export default function filtersTitles(title) {
       return "Nhảm nhí";
     case "Movie":
       return "Phim ảnh";
+    default:
   }
 }

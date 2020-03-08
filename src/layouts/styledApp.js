@@ -23,7 +23,7 @@ export default styled.div`
         justify-content: space-between;
         align-items: center;
         margin: 0;
-        a {
+        span {
           color: #333;
           font-size: 14px;
           font-weight: 700;
@@ -36,7 +36,7 @@ export default styled.div`
           -webkit-transition: color 0.2s ease;
           transition: color 0.2s ease;
         }
-        a:hover {
+        span:hover {
           color: #e13d3d;
         }
         &-dropdown {

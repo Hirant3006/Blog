@@ -8,8 +8,7 @@ import filtersTitles from "../../utilities/index.js";
 import 'moment/locale/vi';
 
 const Post = ({ fields }) => {
-  const formatTime = date => moment(date).locale('vi').format("mm/dd/YYYY");
-  ''.toUpperCase.call(formatTime[0])
+  const formatTime = date => moment(date).locale('vi').format("DD/MM/YYYY HH:mm");
 
   const options = {
     // Render image

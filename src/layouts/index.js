@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import StyledApp from "./styledApp";
 import "../assets/scss/common.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import StyledApp from "./styledApp";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,6 +32,18 @@ const UnDropdownNavKeyframes = keyframes`
 
 library.add(fab, faSearch, faBars);
 
+const styledDropDown = styled.div``;
+
+const DropDownAnimation = styled.div`
+  animation: ${DropdownNavKeyframes} 1s linear 0s;
+  animation-fill-mode: forwards;
+`;
+
+const DropUpAnimation = styled.div`
+  animation: ${UnDropdownNavKeyframes} 1s linear 0s;
+  animation-fill-mode: forwards;
+`;
+
 const NavigateList = [
   { name: "CODING", cat: "code", path: "/category/code" },
   { name: "UI/UX", cat: "uiux", path: "/category/uiux" },
@@ -42,19 +54,15 @@ const NavigateList = [
 
 function App(props) {
   const [isDropDown, setDropDown] = useState("start");
-  const [DropDownAni, setDropDownAni] = useState(styled.div``);
+  const [DropDownAni, setDropDownAni] = useState(styledDropDown);
 
   useEffect(() => {
+    /*eslint-disabled-next-line*/
     if (isDropDown === false)
-      setDropDownAni(styled.div`
-        animation: ${DropdownNavKeyframes} 1s linear 0s;
-        animation-fill-mode: forwards;
-      `);
+      setDropDownAni(DropDownAnimation);
+    /*eslint-disabled-next-line*/ 
     else if (isDropDown === true)
-      setDropDownAni(styled.div`
-        animation: ${UnDropdownNavKeyframes} 1s linear 0s;
-        animation-fill-mode: forwards;
-      `);
+      setDropDownAni(DropUpAnimation);
     else setDropDownAni(styled.div``);
   }, [isDropDown]);
 
@@ -97,10 +105,10 @@ function App(props) {
             </a>
           </nav>
           <nav className="mobile-navbar mt-10">
-            <a href=" " onClick={() => setDropDown(!isDropDown)}>
-              <FontAwesomeIcon icon="bars" className="mr-5" />
+            <span onClick={() => setDropDown(!isDropDown)} className="co-red">
+              <FontAwesomeIcon icon="bars" className="mr-5 " />
               MENU
-            </a>
+            </span>
             <a href="/" className="ml-20">
               <h3>
                 <FontAwesomeIcon icon="search" />
