@@ -14,7 +14,7 @@ export default styled.div`
       text-align: center;
       align-self: center;
       font-family: beVietNam, serif;
-      font-size: 35px;
+      font-size: 45px;
       font-weight: 400;
       width: fit-content;
       color: black;

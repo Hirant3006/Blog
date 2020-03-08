@@ -66,7 +66,7 @@ const SideBar = () => {
             {" "}
             <br />
             Hiện tại ở đây vẫn chưa hoàn thiện mà cũng không có mấy content, nên
-            nếu hứng thú với mấy thứ ở trên hay mấy bài viết thì liên lạc với
+            nếu hứng thú với những cái ở trên hay mấy bài viết thì liên lạc với
             mình ha :>
           </div>
           <div className="social-links">
