@@ -4,9 +4,10 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import filtersTitles from "../../utilities/index.js";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import 'moment/locale/vi';
 
 const PostCard = ({ fields }) => {
-  const formatTime = date => moment(date).format("MMMM DD, YYYY HH:mm");
+  const formatTime = date => moment(date).locale('vi').format("DD/MM/YYYY HH:mm");
 
   const options = {
     // Render image

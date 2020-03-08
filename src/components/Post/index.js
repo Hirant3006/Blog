@@ -5,9 +5,11 @@ import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import MetaTags, { ReactTitle } from "react-meta-tags";
 import filtersTitles from "../../utilities/index.js";
+import 'moment/locale/vi';
 
 const Post = ({ fields }) => {
-  const formatTime = date => moment(date).format("MMMM DD, YYYY HH:mm");
+  const formatTime = date => moment(date).locale('vi').format("mm/dd/YYYY");
+  ''.toUpperCase.call(formatTime[0])
 
   const options = {
     // Render image
