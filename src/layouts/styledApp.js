@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export default styled.div`
   header {
+    font-family: "beVietNam", serif;
     margin: 0 auto;
     text-align: center;
     .mobile-navbar {
@@ -12,12 +13,12 @@ export default styled.div`
     }
     .logo {
       font-size: 6.5em;
-      font-family: "Inria Serif", serif;
       letter-spacing: 0.08em;
       color: black;
     }
     @media only screen and (max-width: 800px) {
       .mobile-navbar {
+        font-family: "beVietNam", serif;
         display: flex !important;
         justify-content: space-between;
         align-items: center;
@@ -73,6 +74,7 @@ export default styled.div`
       }
     }
     .navbar {
+      font-family: "beVietNam", serif;
       display: flex;
       justify-content: space-between;
       align-items: center;

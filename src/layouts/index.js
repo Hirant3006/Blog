@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Router from "../router/";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import ThemeContextProvider from "./ThemeContext";
 
 const DropdownNavKeyframes = keyframes`
   0% {
@@ -28,7 +29,6 @@ const UnDropdownNavKeyframes = keyframes`
     opacity: 0;
     height: 0px;
 }`;
-
 
 library.add(fab, faSearch, faBars);
 
@@ -80,41 +80,43 @@ function App(props) {
   // },[])
   // console.log(displayMobileNav, setDisplayMobieNav);
   return (
-    <StyledApp className="mt-40">
-      <header>
-        <span>
-          <Link className="logo" to="/">
-            A LITTLE HIRANY 
-          </Link>
-        </span>
-        <nav className="navbar mt-10">
-          {NavigateComp}
-          <a href="/" className="ml-20">
-            <h3>
-              <FontAwesomeIcon icon="search" />
-            </h3>
-          </a>
-        </nav>
-        <nav className="mobile-navbar mt-10">
-          <a onClick={() => setDropDown(!isDropDown)}>
-            <FontAwesomeIcon icon="bars" className="mr-5" />
-            MENU
-          </a>
-          <a href="/" className="ml-20">
-            <h3>
-              <FontAwesomeIcon icon="search" />
-            </h3>
-          </a>
-        </nav>
-        <div className="border"></div>
-        <DropDownAni className="mt-10 mobile-navbar-dropdown">
-          {NavigateComp}
-        </DropDownAni>
-      </header>
-      <div className="mt-20">
-        <Router />
-      </div>
-    </StyledApp>
+    <ThemeContextProvider>
+      <StyledApp className="mt-40">
+        <header>
+          <span>
+            <Link className="logo" to="/">
+              A LITTLE HIRANY
+            </Link>
+          </span>
+          <nav className="navbar mt-10">
+            {NavigateComp}
+            <a href="/" className="ml-20">
+              <h3>
+                <FontAwesomeIcon icon="search" />
+              </h3>
+            </a>
+          </nav>
+          <nav className="mobile-navbar mt-10">
+            <a onClick={() => setDropDown(!isDropDown)}>
+              <FontAwesomeIcon icon="bars" className="mr-5" />
+              MENU
+            </a>
+            <a href="/" className="ml-20">
+              <h3>
+                <FontAwesomeIcon icon="search" />
+              </h3>
+            </a>
+          </nav>
+          <div className="border"></div>
+          <DropDownAni className="mt-10 mobile-navbar-dropdown">
+            {NavigateComp}
+          </DropDownAni>
+        </header>
+        <div className="mt-20">
+          <Router />
+        </div>
+      </StyledApp>
+    </ThemeContextProvider>
   );
 }
 

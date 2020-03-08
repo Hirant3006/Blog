@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'BeVietNam';
+  src: local('BeVietNam'), url(./fonts/BeVietNam.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: Karla,sans-serif;

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './layouts/';
 import { BrowserRouter } from 'react-router-dom';
+import './fonts/BeVietNam.ttf';
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 

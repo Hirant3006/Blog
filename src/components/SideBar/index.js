@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledSideBar = styled.div`
   background: white;
-  font-family: bodoni, serif;
+  font-family: beVietNam, serif;
   img {
     width: 100%;
   }

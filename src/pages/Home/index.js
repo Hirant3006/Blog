@@ -10,12 +10,12 @@ import styled from "styled-components";
 const StyledHome = styled.div`
   .main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     .posts {
       width: 65%;
     }
     .about-content {
-      width: 28%;
+      display: none;
     }
     @media only screen and (max-width: 800px) {
       .about-content {
