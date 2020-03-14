@@ -11,24 +11,37 @@ const Er404 = () => (
   </div>
 );
 
+const client = contentful.createClient({
+  space: "zttx8n98lc3r",
+  accessToken: "AGjnCQHwzRIWOr7e9-kn8PLMMd0cWnRCXRjiNl_YHrY"
+});
+
+// const getPost = cat => {
+//   return new Promise(resolve => {
+//     client
+//       .getEntries({
+//         // order: "sys.updatedAt",
+//         content_type: "blogPost",
+//         "fields.category": cat
+//       })
+//       .then(data => resolve(data));
+//   });
+// };
+const getPost = cat => {
+  return client
+    .getEntries({
+      // order: "sys.updatedAt",
+      content_type: "blogPost",
+      "fields.category": cat
+    })
+    .then(data => Promise.resolve(data));
+};
+
 export default ({ cat }) => {
   const [contents, setContents] = useState("beforeloading");
 
   useEffect(() => {
-    const client = contentful.createClient({
-      space: "zttx8n98lc3r",
-      accessToken: "AGjnCQHwzRIWOr7e9-kn8PLMMd0cWnRCXRjiNl_YHrY"
-    });
-    const getPost = async () => {
-      const data = await client.getEntries({
-        // order: "sys.updatedAt",
-        content_type: "blogPost",
-        "fields.category": cat
-      });
-      setContents(data);
-    };
-
-    getPost();
+    getPost(cat).then(data => setContents(data));
   }, [cat]);
 
   const PostCardList = (contents.items || []).map((content, index) => {

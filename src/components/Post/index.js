@@ -3,7 +3,6 @@ import StyledPostCard from "./styledPostCard";
 import moment from "moment";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import MetaTags, { ReactTitle } from "react-meta-tags";
 import filtersTitles from "../../utilities/index.js";
 import 'moment/locale/vi';
 
@@ -30,10 +29,6 @@ const Post = ({ fields }) => {
   return (
     <StyledPostCard className="mb-40 ">
       <div className="card">
-        <ReactTitle title={`${fields.title} |  A little Hirany`} />
-        <MetaTags>
-          <meta property="og:title" content={fields.title} />
-        </MetaTags>
         <a className="card-title mb-10" href="/">
           {fields.title}
         </a>
