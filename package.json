@@ -22,17 +22,21 @@
     "react-meta-tags": "^0.7.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "gh-pages": "^0.11.0",
+    "sw-precache": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp manifest.json build/ && sw-precache --root='build/' --static-file-globs='build/**/!(*map*)'",
+    "gh-pages": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "./",
   "browserslist": {
     "production": [
       ">0.2%",
