@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Blog/static/css/main.23c5edb7.chunk.css",
+    "main.js": "/Blog/static/js/main.fea55758.chunk.js",
+    "main.js.map": "/Blog/static/js/main.fea55758.chunk.js.map",
+    "runtime-main.js": "/Blog/static/js/runtime-main.295fd07b.js",
+    "runtime-main.js.map": "/Blog/static/js/runtime-main.295fd07b.js.map",
+    "static/js/2.d3f816cf.chunk.js": "/Blog/static/js/2.d3f816cf.chunk.js",
+    "static/js/2.d3f816cf.chunk.js.map": "/Blog/static/js/2.d3f816cf.chunk.js.map",
+    "index.html": "/Blog/index.html",
+    "precache-manifest.e6db915e6b95d3a8e1eac40b59762d65.js": "/Blog/precache-manifest.e6db915e6b95d3a8e1eac40b59762d65.js",
+    "service-worker.js": "/Blog/service-worker.js",
+    "static/css/main.23c5edb7.chunk.css.map": "/Blog/static/css/main.23c5edb7.chunk.css.map",
+    "static/js/2.d3f816cf.chunk.js.LICENSE": "/Blog/static/js/2.d3f816cf.chunk.js.LICENSE",
+    "static/media/BeVietNam.ttf": "/Blog/static/media/BeVietNam.bd27b3ec.ttf",
+    "static/media/img.jpg": "/Blog/static/media/img.2f69cd7b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.295fd07b.js",
+    "static/js/2.d3f816cf.chunk.js",
+    "static/css/main.23c5edb7.chunk.css",
+    "static/js/main.fea55758.chunk.js"
+  ]
+}
