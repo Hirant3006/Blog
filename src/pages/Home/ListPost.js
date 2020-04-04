@@ -3,9 +3,9 @@ import * as contentful from "contentful";
 import PostCard from "../../components/PostCard/";
 import "./listpost.scss";
 
-const Er404 = () => (
+const Er404 = (contents) => (
   <div className="text-progress">
-    Chưa có gì ở đây hết cậu ơi {":<"}{" "}
+   {contents==='error' ? 'Hừm.. có vẻ chúng ta đang offline' : ((contents.items || []).length === 0) ?  "Chưa có gì ở đây hết cậu ơi :<" : "Đợi tớ tìm content tí :>"} 
     {/* <img class="meow1" alt="meow" src={require("../../assets/meow1.png")} />{" "}
     <img class="meow2" alt="meow" src={require("../../assets/meow2.png")} /> */}
   </div>
@@ -34,14 +34,14 @@ const getPost = cat => {
       content_type: "blogPost",
       "fields.category": cat
     })
-    .then(data => Promise.resolve(data));
+    .then(data => Promise.resolve(data)).catch(error => Promise.reject(error))
 };
 
 export default ({ cat }) => {
   const [contents, setContents] = useState("beforeloading");
 
   useEffect(() => {
-    getPost(cat).then(data => setContents(data));
+    getPost(cat).then(data => setContents(data)).catch(error => setContents('error'))
   }, [cat]);
 
   const PostCardList = (contents.items || []).map((content, index) => {
@@ -53,6 +53,6 @@ export default ({ cat }) => {
   });
 
   if ((contents.items || []).length !== 0) return PostCardList;
-  else if (contents !== "beforeloading") return Er404();
+  else if (contents !== "beforeloading") return Er404(contents);
   return <div className="text-progress">Đợi tớ tìm content tí :></div>;
 };
